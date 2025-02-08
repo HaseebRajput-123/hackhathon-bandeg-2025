@@ -2,20 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
+  font-family: var(--font-geist-sans), sans-serif;
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+code, pre {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+html {
+  scroll-behavior: smooth; /* Optional for better scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling at the root level */
+  width: 100%; /* Ensure HTML does not exceed viewport */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Consistent box model */
+}
+
+img, video {
+  max-width: 100%; /* Ensure images/videos don't overflow */
+  height: auto;
+}
+
+/* Reveal Animation */
+.reveal-text {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: reveal 1s ease-out forwards;
+}
+
+.reveal-text:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.reveal-text:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.reveal-text:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.reveal-text:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
