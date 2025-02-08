@@ -1,10 +1,10 @@
 import Image from "next/image";
-import pic1 from "@/images/product-cover-5 (21).png";
-import pic2 from "@/images/product-cover-5 (22).png";
-import pic3 from "@/images/product-cover-5 (23).png";
-import pic4 from "@/images/product-cover-5 (24).png";
-import pic5 from "@/images/product-cover-5 (25).png";
-import pic6 from "@/images/product-cover-5 (20).png";
+import pic1 from "@/images/product-cover-5-21.png";
+import pic2 from "@/images/product-cover-5-22.png";
+import pic3 from "@/images/product-cover-5-23.png";
+import pic4 from "@/images/product-cover-5-24.png";
+import pic5 from "@/images/product-cover-5-25.png";
+import pic6 from "@/images/product-cover-5-20.png";
 import CardT2 from "./cards-text-2";
 import cm1 from "@/images/fa-brands-1.png";
 import cm2 from "@/images/fa-brands-2.png";

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import women from "@/public/images/shop-hero-1-product-slide-1 (1).jpg";
+import women from "@/public/images/shop-hero-1-product-slide-1-1.jpg";
 
 export default function Carousel() {
   return (

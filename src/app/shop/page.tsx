@@ -9,31 +9,34 @@ import Footer from "../components/footer";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import arrow from "@/images/Vector (13).png";
-import cat1 from "@/public/images/card-item.png";
-import cat2 from "@/public/images/card-item (1).png";
-import cat3 from "@/public/images/card-item (2).png";
-import cat4 from "@/public/images/card-item (3).png";
-import cat5 from "@/public/images/card-item (4).png";
-import drop from "@/images/Vector (14).png";
-import frame from "@/images/Frame 31.png";
-import clients from "@/images/desktop-clients-1.png";
-import pic9 from "@/images/product-cover-5 (8).png";
-import pic10 from "@/images/product-cover-5 (9).png";
-import pic11 from "@/images/product-cover-5 (10).png";
-import pic12 from "@/images/product-cover-5 (11).png";
-import pic13 from "@/images/product-cover-5 (12).png";
-import pic14 from "@/images/product-cover-5 (13).png";
-import pic15 from "@/images/product-cover-5 (14).png";
-import pic16 from "@/images/product-cover-5 (15).png";
-import pic17 from "@/images/product-cover-5 (16).png";
-import pic18 from "@/images/product-cover-5 (17).png";
-import pic19 from "@/images/product-cover-5 (18).png";
-import pic20 from "@/images/product-cover-5 (19).png";
-import { Products } from "@/types/products";
 import Swal from "sweetalert2";
 import { addToCart } from "../actions/actions";
 import CardText from "../components/cards";
+
+// Importing images
+import arrow from "@/public/images/Vector-13.png";
+import drop from "public/images/vector-14..png";
+import clients from "public/images/desktop-clients.png";
+
+import cat1 from "@/public/images/card-item.png";
+import cat2 from "@/public/images/card-item-1.png";
+import cat3 from "@/public/images/card-item-2.png";
+import cat4 from "@/public/images/card-item 3.png";
+import cat5 from "@/public/images/card-item-4.png";
+import pic9 from "@/public/images/product-cover-5-8.png";
+import pic10 from "@/public/images/product-cover-5-9.png";
+import pic11 from "@/public/images/product-cover-5-10.png";
+import pic12 from "@/public/images/product-cover-5-11.png";
+import pic13 from "@/public/images/product-cover-5-12.png";
+import pic14 from "@/public/images/product-cover-5-13.png";
+import pic15 from "@/public/images/product-cover-5-14.png";
+import pic16 from "@/public/images/product-cover-5-15.png";
+import pic17 from "@/public/images/product-cover-5-16.png";
+import pic18 from "@/public/images/product-cover-5-17.png";
+import pic19 from "@/public/images/product-cover-5-18.png";
+import pic20 from "@/public/images/product-cover-5-19.png";
+
+import { Products } from "@/types/products";
 
 const ShopPage = () => {
   const [products, setProducts] = useState<Products[]>([]);
@@ -55,57 +58,16 @@ const ShopPage = () => {
     fetchProducts();
   }, []);
 
-  // Handle category change
-  const handleCategoryChange = (selectedCategory: string) => {
-    setCategory(selectedCategory);
-    filterProducts(selectedCategory, maxPrice);
-  };
-  //ADD TO CART AND NOTIFICATION Handle
-const handleClick = (e: React.MouseEvent, product: Products) => {
-  e.preventDefault();
-  
-    // Show SweetAlert2 notification after adding the product to the cart
-    Swal.fire({
-      title: 'Success!',
-      text: `${product.name} has been added to your cart.`,
-      icon: 'success',
-      showCancelButton: true,
-      confirmButtonText: 'OK',
-      cancelButtonText: 'View Cart',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // User clicked "OK"
-        console.log('User clicked OK');
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
-        // User clicked "View Cart"
-        window.location.href = '/cart';
-      }
-    });
-  addToCart(product);
-  console.log(product);
-  
-  }
-
-
   // Filter products by category and price
   const filterProducts = (category: string, price: number) => {
     let updatedProducts = products;
-
     if (category !== "all") {
       updatedProducts = updatedProducts.filter(
         (product) => product.category.toLowerCase() === category.toLowerCase()
       );
     }
-
-    updatedProducts = updatedProducts.filter(
-      (product) => product.price <= price
-    );
+    updatedProducts = updatedProducts.filter((product) => product.price <= price);
     setFilteredProducts(updatedProducts);
-  };
-
-  const handlePriceChange = (arg0: number): void => {
-    setMaxPrice(arg0);
-    filterProducts(category, arg0);
   };
 
   return (
@@ -113,6 +75,31 @@ const handleClick = (e: React.MouseEvent, product: Products) => {
       <GreenHeader />
       <Navbar />
 
+      {/* Category Section */}
+      <div className="w-full bg-[#FAFAFA] py-8">
+        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {[cat1, cat2, cat3, cat4, cat5].map((cat, index) => (
+            <Image key={index} src={cat} alt={`Category ${index + 1}`} className="w-[60%] md:w-full lg:w-full" />
+          ))}
+        </div>
+      </div>
+
+      {/* Clients Section */}
+      <div className="relative mt-12">
+        <Image src={clients} alt="clients" className="w-full" />
+      </div>
+
+      {/* Product Cards */}
+      <div className="relative w-full px-4 py-12">
+        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {[pic9, pic10, pic11, pic12, pic13, pic14, pic15, pic16, pic17, pic18, pic19, pic20].map((pic, index) => (
+            <div key={index} className="w-full max-w-[238px] mx-auto mb-8 flex flex-col items-center">
+              <Image src={pic} alt={`Product ${index + 1}`} className="w-full h-full object-cover" />
+              <CardText />
+            </div>
+          ))}
+        </div>
+      </div>
         {/* Shop Section */}
         <div className="w-full h-[92px]  flex flex-col items-center mt-[10px]">
         <div className="w-full max-w-screen-xl flex gap-4 items-center py-[40px]">
@@ -260,4 +247,6 @@ const handleClick = (e: React.MouseEvent, product: Products) => {
       <Footer />
     </div>
   );
-}
+};
+
+export default ShopPage;

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Men from "@/public/images/filter.png";
-import women from "@/public/images/filter (1).png";
-import div1 from "@/public/images/filter (2).png";
-import div2 from "@/public/images/filter (3).png";
+import women from "@/public/images/asian-woman-man-with-winter-clothes 1.png";
+import div1 from "@/public/images/filter-2.png";
+import div2 from "@/public/images/filter-2.png";
 
 export default function Editors() {
   return (

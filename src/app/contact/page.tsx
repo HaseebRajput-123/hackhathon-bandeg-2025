@@ -1,13 +1,13 @@
 
 import Image from "next/image";
-import twitter from "@/public/images/logos_twitter (1).png";
-import facebook from "@/public/images/logos_facebook (1).png";
+import twitter from "@/public/images/logos_twitter-1.png";
+import facebook from "@/public/images/logos_facebook-1.png";
 import ig from "@/public/images/ant-design_instagram-outlined.png";
-import linkdenin from "@/public/images/logos_linkedin-icon (1).png";
+import linkdenin from "@/public/images/logos_linkedin-icon-1.png";
 import family from "@/public/images/desktop-header-24.png";
 import phone from "@/public/images/icn settings .icn-xl.png";
-import location from "@/public/images/icn settings .icn-xl (1).png";
-import mail from "@/public/images/icn settings .icn-xl (2).png";
+import location from "@/public/images/icn settings .icn-xl-1.png";
+import mail from "@/public/images/icn settings .icn-xl-2.png";
 import arrow from "@/public/images/Arrow 2.png";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";

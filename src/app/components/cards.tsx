@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import colours from "@/images/product-colors.png";
+import colours from "@/public/images/product-colors.png";
 import {  ToastContainer,toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

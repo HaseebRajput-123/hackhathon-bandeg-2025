@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import arrow from "@/public/images/Vector (13).png";
+import arrow from "@/public/images/Vector-13.png";
 import cm1 from "@/public/images/fa-brands-1.png";
 import cm2 from "@/public/images/fa-brands-2.png";
 import cm3 from "@/public/images/fa-brands-3.png";
